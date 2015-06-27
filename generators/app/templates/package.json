@@ -1,5 +1,10 @@
 {
   "name": "<%= appName %>",
+  "author": {
+    "name": "Damir Kusar",
+    "email": "damir@kusar.ch",
+    "url": "https://github.com/damirkusar"
+  },
   "version": "2.0.1",
   "license": "MIT",
   "repository": {
