@@ -38,6 +38,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     }.bind(this));
   },
   scaffoldProject: function(){
+    this.directory('public', 'public');
 
     this.fs.copy(
       this.templatePath('.bowerrc'),
@@ -91,8 +92,11 @@ var LeptirGenerator = yeoman.generators.Base.extend({
       this.destinationPath('README.md')
     );
 
-    this.directory('public', 'public');
-
+    this.fs.copyTpl(
+      this.templatePath('public/index.html'),
+      this.destinationPath('public/index.html'),
+      { appName: this.appName }
+    );
   },
 
 });

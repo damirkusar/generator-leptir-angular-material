@@ -4,7 +4,10 @@
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "damirkusar/generator-leptir-angular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/damirkusar/leptir-angular-generator"
+  },
   "author": {
     "name": "Damir Kusar",
     "email": "damir@kusar.ch",
@@ -17,7 +20,18 @@
     "generators"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "angular",
+    "angular-translate",
+    "angular-ui",
+    "gulp",
+    "browserify",
+    "bootstrap",
+    "karma",
+    "jasmine",
+    "ftp deploy",
+    "scss",
+    "leptir"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
