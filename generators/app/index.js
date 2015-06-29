@@ -5,7 +5,6 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var memFs = require('mem-fs');
 var editor = require('mem-fs-editor');
-var sleep = require('sleep');
 
 var store = memFs.create();
 var fs = editor.create(store);
