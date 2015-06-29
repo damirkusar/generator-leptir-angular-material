@@ -35,8 +35,13 @@
   ],
   "dependencies": {
     "chalk": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-eol": "^0.1.1",
+    "gulp-insert": "^0.4.0",
+    "is-there": "^4.0.0",
     "mem-fs": "^1.1.0",
     "mem-fs-editor": "^2.0.1",
+    "underscore.string": "^3.1.1",
     "yeoman-generator": "^0.19.0",
     "yosay": "^1.0.2"
   },

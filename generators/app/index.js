@@ -5,9 +5,12 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var memFs = require('mem-fs');
 var editor = require('mem-fs-editor');
+var sleep = require('sleep');
 
 var store = memFs.create();
 var fs = editor.create(store);
+
+var templateContext;
 
 var LeptirGenerator = yeoman.generators.Base.extend({
 
@@ -15,7 +18,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     this.log(
-      'Welcome to the sensational ' + chalk.cyan('Leptir') + ' generator!'
+      'Welcome to the sensational ' + chalk.cyan('leptir') + ' generator!'
     );
 
     var prompts = [
@@ -40,11 +43,12 @@ var LeptirGenerator = yeoman.generators.Base.extend({
         message: 'What is your projects github url?'
       },
       {
-        type: 'confirm',
-        name: 'addDemoModule',
-        message: 'Would you like to generate a demo module?',
-        default: true
-    }];
+            type: 'confirm',
+            name: 'addDemoModule',
+            message: 'Would you like to generate a demo module ?',
+            default: true
+        }
+      ];
 
     this.prompt(prompts, function(props){
       console.log('Damir :' + props);
@@ -60,12 +64,14 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     }.bind(this));
   },
   scaffoldProject: function(){
-    var templateContext = {
+    var done = this.async();
+
+    this.templateContext = {
       appName: this.appName,
       devName: this.devName,
       devEmail: this.devEmail,
       devGitHubUrl: this.devGitHubUrl,
-      projGitHubUrl: this.projGitHubUrl,
+      projGitHubUrl: this.projGitHubUrl
     };
 
     this.directory('public', 'public');
@@ -88,7 +94,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     this.fs.copyTpl(
       this.templatePath('bower.json'),
       this.destinationPath('bower.json'),
-      templateContext
+      this.templateContext
     );
 
     this.fs.copy(
@@ -114,7 +120,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'),
-      templateContext
+      this.templateContext
     );
 
     this.fs.copy(
@@ -125,9 +131,24 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     this.fs.copyTpl(
       this.templatePath('public/index.html'),
       this.destinationPath('public/index.html'),
-      templateContext
+      this.templateContext
     );
+
+    this.fs.commit(function(){
+      done();
+    });
   },
+  generateDemoModule: function() {
+      if (this.addDemoModule) {
+          var done = this.async();
+          this.invoke("leptir:module", {args: ["Demo"]}, function(){
+              done();
+          });
+      }
+  },
+  // installDependencies: function () {
+  //   this.installDependencies();
+  // }
 
 });
 
