@@ -15,7 +15,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     var done = this.async();
 
     this.log(
-      'Welcome to the sensational ' + chalk.red('Leptir-Angular') + ' generator!'
+      'Welcome to the sensational ' + chalk.cyan('Leptir') + ' generator!'
     );
 
     var prompts = [
