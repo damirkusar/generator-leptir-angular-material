@@ -1,15 +1,15 @@
 {
   "name": "<%= appName %>",
   "author": {
-    "name": "Damir Kusar",
-    "email": "damir@kusar.ch",
-    "url": "https://github.com/damirkusar"
+    "name": "<%= devName %>",
+    "email": "<%= devEmail %>",
+    "url": "<%= devGitHubUrl %>"
   },
   "version": "2.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "<%= projGitHubUrl %>"
   },
   "devDependencies": {
     "bower": "^1.3.1",

@@ -18,10 +18,27 @@ var LeptirGenerator = yeoman.generators.Base.extend({
       'Welcome to the sensational ' + chalk.red('Leptir-Angular') + ' generator!'
     );
 
-    var prompts = [{
-      name: 'appName',
-      message: 'What is your app\'s name?'
-    },
+    var prompts = [
+      {
+        name: 'appName',
+        message: 'What is your app\'s name?'
+      },
+      {
+        name: 'devName',
+        message: 'What is your name?'
+      },
+      {
+        name: 'devEmail',
+        message: 'What is your email?'
+      },
+      {
+        name: 'devGitHubUrl',
+        message: 'What is your github url?'
+      },
+      {
+        name: 'projGitHubUrl',
+        message: 'What is your projects github url?'
+      },
       {
         type: 'confirm',
         name: 'addDemoModule',
@@ -30,14 +47,27 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     }];
 
     this.prompt(prompts, function(props){
+      console.log('Damir :' + props);
       this.props = props;
       this.appName = this.props.appName;
+      this.devName = this.props.devName;
+      this.devEmail = this.props.devEmail;
+      this.devGitHubUrl = this.props.devGitHubUrl;
+      this.projGitHubUrl = this.props.projGitHubUrl;
       this.addDemoModule = this.props.addDemoModule;
 
       done();
     }.bind(this));
   },
   scaffoldProject: function(){
+    var templateContext = {
+      appName: this.appName,
+      devName: this.devName,
+      devEmail: this.devEmail,
+      devGitHubUrl: this.devGitHubUrl,
+      projGitHubUrl: this.projGitHubUrl,
+    };
+
     this.directory('public', 'public');
 
     this.fs.copy(
@@ -58,7 +88,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     this.fs.copyTpl(
       this.templatePath('bower.json'),
       this.destinationPath('bower.json'),
-      { appName: this.appName }
+      templateContext
     );
 
     this.fs.copy(
@@ -84,7 +114,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     this.fs.copyTpl(
       this.templatePath('package.json'),
       this.destinationPath('package.json'),
-      { appName: this.appName }
+      templateContext
     );
 
     this.fs.copy(
@@ -95,7 +125,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
     this.fs.copyTpl(
       this.templatePath('public/index.html'),
       this.destinationPath('public/index.html'),
-      { appName: this.appName }
+      templateContext
     );
   },
 
