@@ -10,6 +10,7 @@ var s = require("underscore.string");
 var gulp = require('gulp');
 var insert = require('gulp-insert');
 var eol = require('gulp-eol');
+var writeToAppScss = require('./../../common/writeToAppScss');
 
 var store = memFs.create();
 var fs = editor.create(store);
@@ -176,28 +177,7 @@ module.exports = yeoman.generators.Base.extend({
     done();
   },
 
-  writingAppScss: function () {
-    var done = this.async();
-
-    if(isThere('public/app.scss')){
-
-      var textToAppend = "@import \"modules/" + this.convertedModuleName + "/css/"+ this.convertedModuleName +"\";";
-      var containsModuleName = s.include(this.fs.read('public/app.scss'), textToAppend);
-
-      if(!containsModuleName){
-        this.log(chalk.blue('Appending module to app.scss.'));
-        gulp.src('public/app.scss')
-          .pipe(eol())
-          .pipe(insert.append(textToAppend))
-          .pipe(gulp.dest('public/'));
-      } else {
-        this.log(chalk.magenta('Nothing to append. Module: ' + this.convertedModuleName + ' already added.'))
-      }
-
-    } else {
-      this.log(chalk.red('Error: No app.scss found.'));
-    }
-
-    done();
+  writeAppScss: function () {
+    writeToAppScss.writeAppScss(this.convertedModuleName, this.convertedModuleName);
   }
 });
