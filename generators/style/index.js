@@ -53,14 +53,16 @@ module.exports = yeoman.generators.Base.extend({
   },
 
   createStyleInModule: function(){
+    this.convertedStyleName = s(this.styleName).humanize().classify().decapitalize().value();
+
     this.fs.copy(
       this.templatePath('style.scss'),
-      this.destinationPath('public/modules/'+this.moduleName+'/css/'+this.styleName+'.scss')
+      this.destinationPath('public/modules/'+this.moduleName+'/css/'+this.convertedStyleName+'.scss')
     );
   },
 
   writeAppScss: function () {
-    writeToAppScss.writeAppScss(this.moduleName, this.styleName);
+    writeToAppScss.writeAppScss(this.moduleName, this.convertedStyleName);
   }
 
   }
