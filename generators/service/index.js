@@ -13,7 +13,7 @@ var insert = require('gulp-insert');
 var eol = require('gulp-eol');
 var dir = require('node-dir');
 var uniqueModules = require('./../../common/getUniqueModules');
-var writeToAppScss = require('./../../common/writeToAppScss');
+var writeToModuleIndex = require('./../../common/writeToModuleIndex');
 
 var store = memFs.create();
 var fs = editor.create(store);
@@ -21,13 +21,13 @@ var fs = editor.create(store);
 module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
-    this.argument('styleName', {
+    this.argument('serviceName', {
       required: true,
       type: String,
-      desc: 'The style name'
+      desc: 'The service name'
     });
 
-    this.log('You called the ' +  chalk.cyan('leptir') + ' style generator with the argument ' + this.styleName + '.');
+    this.log('You called the ' +  chalk.cyan('leptir') + ' service generator with the argument ' + this.serviceName + '.');
   },
 
   getModule: function() {
@@ -40,7 +40,7 @@ module.exports = yeoman.generators.Base.extend({
     {
       type: 'list',
       name: 'moduleName',
-      message: 'Into which module do you want to create this style?',
+      message: 'Into which module do you want to create this service?',
       choices: uModules
     }];
 
@@ -52,15 +52,26 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  createStyleInModule: function(){
-    this.fs.copy(
-      this.templatePath('style.scss'),
-      this.destinationPath('public/modules/'+this.moduleName+'/css/'+this.styleName+'.scss')
+  createServiceInModule: function(){
+    this.convertedServiceNameClass = s(this.serviceName).humanize().classify().value();
+    this.convertedServiceName = s(this.convertedServiceNameClass).decapitalize().value();
+
+    this.fullName = this.convertedServiceName+'.service';
+
+    this.templateContext = {
+      serviceName: this.convertedServiceNameClass,
+      moduleName: this.moduleName
+    };
+
+    this.fs.copyTpl(
+      this.templatePath('service.js'),
+      this.destinationPath('public/modules/'+this.moduleName+'/js/services/'+this.fullName+'.js'),
+      this.templateContext
     );
   },
 
-  writeAppScss: function () {
-    writeToAppScss.writeAppScss(this.moduleName, this.styleName);
+  writeIndex: function () {
+    writeToModuleIndex.writeToIndex(this.moduleName, this.fullName, 'services');
   }
 
   }

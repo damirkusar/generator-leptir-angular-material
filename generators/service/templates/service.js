@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('<%= moduleName %>').factory('<%= moduleNameClass %>Service', [function () {
+angular.module('<%= moduleName %>').factory('<%= serviceName %>Service', [function () {
 
     return {
         getDummyText: function(){
