@@ -13,7 +13,7 @@ var insert = require('gulp-insert');
 var eol = require('gulp-eol');
 var dir = require('node-dir');
 var uniqueModules = require('./../../common/getUniqueModules');
-var writeToAppScss = require('./../../common/writeToAppScss');
+var writeToModuleIndex = require('./../../common/writeToModuleIndex');
 
 var store = memFs.create();
 var fs = editor.create(store);
@@ -21,13 +21,13 @@ var fs = editor.create(store);
 module.exports = yeoman.generators.Base.extend({
 
   initializing: function () {
-    this.argument('styleName', {
+    this.argument('directiveName', {
       required: true,
       type: String,
-      desc: 'The style name'
+      desc: 'The directive name'
     });
 
-    this.log('You called the ' +  chalk.cyan('leptir') + ' style generator with the argument ' + this.styleName + '.');
+    this.log('You called the ' +  chalk.cyan('leptir') + ' directive generator with the argument ' + this.directiveName + '.');
   },
 
   getModule: function() {
@@ -40,7 +40,7 @@ module.exports = yeoman.generators.Base.extend({
     {
       type: 'list',
       name: 'moduleName',
-      message: 'Into which module do you want to create this style?',
+      message: 'Into which module do you want to create this directive?',
       choices: uModules
     }];
 
@@ -52,15 +52,26 @@ module.exports = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  createStyleInModule: function(){
-    this.fs.copy(
-      this.templatePath('style.scss'),
-      this.destinationPath('public/modules/'+this.moduleName+'/css/'+this.styleName+'.scss')
+  createDirectiveInModule: function(){
+    this.convertedDirectiveNameClass = s(this.directiveName).humanize().classify().value();
+    this.convertedDirectiveName = s(this.convertedDirectiveNameClass).decapitalize().value();
+
+    this.fullName = this.convertedDirectiveName+'.directive';
+
+    this.templateContext = {
+      directiveName: this.convertedDirectiveNameClass,
+      moduleName: this.moduleName
+    };
+
+    this.fs.copyTpl(
+      this.templatePath('directive.js'),
+      this.destinationPath('public/modules/'+this.moduleName+'/js/directives/'+this.fullName+'.js'),
+      this.templateContext
     );
   },
 
-  writeAppScss: function () {
-    writeToAppScss.writeAppScss(this.moduleName, this.styleName);
+  writeIndex: function () {
+    writeToModuleIndex.writeToIndex(this.moduleName, this.fullName, 'directives');
   }
 
   }

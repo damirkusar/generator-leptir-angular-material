@@ -56,7 +56,7 @@ module.exports = yeoman.generators.Base.extend({
     this.convertedControllerNameClass = s(this.controllerName).humanize().classify().value();
     this.convertedControllerName = s(this.convertedControllerNameClass).decapitalize().value();
 
-    this.fullControllerName = this.convertedControllerName+'.controller';
+    this.fullName = this.convertedControllerName+'.controller';
 
     this.templateContext = {
       controllerName: this.convertedControllerNameClass,
@@ -65,13 +65,13 @@ module.exports = yeoman.generators.Base.extend({
 
     this.fs.copyTpl(
       this.templatePath('controller.js'),
-      this.destinationPath('public/modules/'+this.moduleName+'/js/controllers/'+this.fullControllerName+'.js'),
+      this.destinationPath('public/modules/'+this.moduleName+'/js/controllers/'+this.fullName+'.js'),
       this.templateContext
     );
   },
 
   writeIndex: function () {
-    writeToModuleIndex.writeToIndex(this.moduleName, this.fullControllerName, 'controllers');
+    writeToModuleIndex.writeToIndex(this.moduleName, this.fullName, 'controllers');
   }
 
   }
