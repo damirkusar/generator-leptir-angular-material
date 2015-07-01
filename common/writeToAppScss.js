@@ -15,19 +15,21 @@ var fs = editor.create(store);
 
 module.exports = {
   writeAppScss: function (moduleName, styleName) {
-      if(isThere('public/app.scss')){
+      var file = 'public/app.scss';
 
-      var textToAppend = "@import \"modules/" + moduleName + "/css/"+ styleName +"\";";
-      var containsModuleName = s.include(fs.read('public/app.scss'), textToAppend);
+      if(isThere(file)){
 
-      if(!containsModuleName){
-        log.info(chalk.blue('Appending module to app.scss.'));
-        gulp.src('public/app.scss')
-          .pipe(eol())
-          .pipe(insert.append(textToAppend))
-          .pipe(gulp.dest('public/'));
+        var textToAppend = "@import \"modules/" + moduleName + "/css/"+ styleName +"\";";
+        var containsName = s.include(fs.read(file), textToAppend);
+
+        if(!containsName){
+          log.info(chalk.blue('Appending style to app.scss.'));
+          gulp.src(file)
+            .pipe(eol())
+            .pipe(insert.append(textToAppend))
+            .pipe(gulp.dest('public/'));
       } else {
-        log.info(chalk.magenta('Nothing to append. Module: ' + moduleName + ' already added.'))
+        log.info(chalk.magenta('Nothing to append. Style: ' + styleName + ' already added.'))
       }
 
     } else {
