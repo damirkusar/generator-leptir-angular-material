@@ -10,7 +10,7 @@ var s = require("underscore.string");
 var gulp = require('gulp');
 var insert = require('gulp-insert');
 var eol = require('gulp-eol');
-var writeToAppScss = require('./../../common/writeToAppScss');
+var writeToAppScss = require('./../common/writeToAppScss');
 
 var store = memFs.create();
 var fs = editor.create(store);

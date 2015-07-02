@@ -12,8 +12,8 @@ var gulp = require('gulp');
 var insert = require('gulp-insert');
 var eol = require('gulp-eol');
 var dir = require('node-dir');
-var uniqueModules = require('./../../common/getUniqueModules');
-var writeToAppScss = require('./../../common/writeToAppScss');
+var uniqueModules = require('./../common/getUniqueModules');
+var writeToAppScss = require('./../common/writeToAppScss');
 
 var store = memFs.create();
 var fs = editor.create(store);
