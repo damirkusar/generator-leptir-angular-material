@@ -4,7 +4,7 @@ Leptir means in croatian language Butterfly.
 
 `AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & ftp deployment out of the box.`
 
-I create often websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed & a yeoman-generator which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
+I create often websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds & generators available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed & a yeoman-generator which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
 I hope it will serve your needs too.
 
 The seed and yeoman-generator are structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment.
