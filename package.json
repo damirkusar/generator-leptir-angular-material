@@ -1,6 +1,6 @@
 {
   "name": "generator-leptir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Yeoman generator for AngularJS with gulp, browserify, bootstrap, SCSS, angular-ui, angular-translate, karma, jasmine",
   "license": "MIT",
   "main": "app/index.js",

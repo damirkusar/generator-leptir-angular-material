@@ -316,7 +316,7 @@ Be aware, that coreHeadline must be in the locale files, otherwise just coreHead
 
 ## Leptir Seed
 
-If you just want to use the seed, please take a look at: https://github.com/damirkusar/leptir-seed
+If you just want to use the seed, please take a look at: [https://github.com/damirkusar/leptir-seed][seed]
 
 
 ## Feedback & Improvements
@@ -335,7 +335,7 @@ If you like this seed and you think it is worht to donate something, please feel
 
 ## Contact
 
-For more information & contact form please check out http://kusar.ch or http://damirkusar.ch
+For more information & contact form please check out [http://kusar.ch][kusar] or [http://damirkusar.ch][damirkusar]
 
 
 
@@ -376,3 +376,4 @@ THE SOFTWARE.
 [donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=damir%40kusar%2ech&lc=US&item_name=Damir%20Kusar&currency_code=USD&bn=PP-DonationsBF%3abtn_donate_LG%2egif%3aNonHosted
 [kusar]: http://kusar.ch/
 [damirkusar]: http://damirkusar.ch/
+[seed]: https://github.com/damirkusar/leptir-seed
