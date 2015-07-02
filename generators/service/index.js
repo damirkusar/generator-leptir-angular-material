@@ -71,7 +71,7 @@ module.exports = yeoman.generators.Base.extend({
 
   createControllerInTest: function(){
     this.fs.copyTpl(
-      this.templatePath('controller.test.js'),
+      this.templatePath('service.test.js'),
       this.destinationPath('public/tests/'+this.moduleName+'/services/'+this.fullName+'.test.js'),
       this.templateContext
     );

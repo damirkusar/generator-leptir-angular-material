@@ -20,6 +20,6 @@ describe(testObjectName, function () {
     }));
 
     it('ModuleTest is correct', function() {
-        expect(scope.ModuleTest).toBe('Modify me in <%= moduleName %> Module');
+        expect(scope.ControllerTest).toBe('Modify me in <%= moduleName %> Module');
     });
 });
