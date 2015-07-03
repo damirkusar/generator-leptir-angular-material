@@ -50,14 +50,22 @@ var LeptirGenerator = yeoman.generators.Base.extend({
       ];
 
     this.prompt(prompts, function(props){
-      console.log('Damir :' + props);
       this.props = props;
       this.appName = this.props.appName;
-      this.devName = this.props.devName;
-      this.devEmail = this.props.devEmail;
-      this.devGitHubUrl = this.props.devGitHubUrl;
-      this.projGitHubUrl = this.props.projGitHubUrl;
-      this.addDemoModule = this.props.addDemoModule;
+
+      if(this.appName == 'leptir'){
+        this.devName = 'Damir Kusar';
+        this.devEmail = 'damir@kusar.ch';
+        this.devGitHubUrl = 'https://github.com/damirkusar';
+        this.projGitHubUrl = 'https://github.com/damirkusar/leptir-seed';
+        this.addDemoModule = true;
+      } else {
+        this.devName = this.props.devName;
+        this.devEmail = this.props.devEmail;
+        this.devGitHubUrl = this.props.devGitHubUrl;
+        this.projGitHubUrl = this.props.projGitHubUrl;
+        this.addDemoModule = this.props.addDemoModule;
+      }
 
       done();
     }.bind(this));
