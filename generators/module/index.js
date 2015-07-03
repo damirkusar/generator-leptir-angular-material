@@ -31,8 +31,6 @@ module.exports = yeoman.generators.Base.extend({
 
     this.convertedModuleNameClass = s(this.moduleName).humanize().classify().value();
     this.convertedModuleName = s(this.convertedModuleNameClass).decapitalize().value();
-    this.log('modulenameClass converted to: ' + this.convertedModuleNameClass + '.');
-    this.log('modulename converted to: ' + this.convertedModuleName + '.');
 
     this.templateContext = {
       moduleNameClass: this.convertedModuleNameClass,
