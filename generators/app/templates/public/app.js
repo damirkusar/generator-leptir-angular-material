@@ -1,3 +1,3 @@
 'use strict';
 
-require('./modules/core');
+require('./modules/core'); // jshint ignore:line
