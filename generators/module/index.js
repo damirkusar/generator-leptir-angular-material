@@ -157,7 +157,7 @@ module.exports = yeoman.generators.Base.extend({
 
     if(isThere('public/app.js')){
 
-      var textToAppend = "require('./modules/" + this.convertedModuleName + "');";
+      var textToAppend = "require('./modules/" + this.convertedModuleName + "'); // jshint ignore:line";
       var containsModuleName = s.include(this.fs.read('public/app.js'), textToAppend);
 
       if(!containsModuleName){

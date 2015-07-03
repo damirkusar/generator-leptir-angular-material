@@ -20,7 +20,7 @@ module.exports = {
       var file = s.sprintf('%sindex.js', path);
       if(isThere(file)){
 
-      var textToAppend = s.sprintf('require(\'./js/%s/%s.js\');', type, name);
+      var textToAppend = s.sprintf('require(\'./js/%s/%s.js\');  // jshint ignore:line', type, name);
       var containsName = s.include(fs.read(file), textToAppend);
 
       if(!containsName){
