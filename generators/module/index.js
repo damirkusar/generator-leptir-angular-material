@@ -11,6 +11,7 @@ var gulp = require('gulp');
 var insert = require('gulp-insert');
 var eol = require('gulp-eol');
 var writeToAppScss = require('./../common/writeToAppScss');
+var yosay = require('yosay');
 
 var store = memFs.create();
 var fs = editor.create(store);
@@ -27,7 +28,7 @@ module.exports = yeoman.generators.Base.extend({
       desc: 'The modules name'
     });
 
-    this.log('You called the ' +  chalk.cyan('leptir') + ' subgenerator module with the argument: ' + this.moduleName + '.');
+    this.log(yosay('You called the ' +  chalk.cyan('leptir') + ' module generator with the argument ' + this.moduleName + '.'));
 
     this.convertedModuleNameClass = s(this.moduleName).humanize().classify().value();
     this.convertedModuleName = s(this.convertedModuleNameClass).decapitalize().value();

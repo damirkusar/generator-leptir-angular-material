@@ -13,6 +13,7 @@ var insert = require('gulp-insert');
 var eol = require('gulp-eol');
 var uniqueModules = require('./../common/getUniqueModules');
 var writeToModuleIndex = require('./../common/writeToModuleIndex');
+var yosay = require('yosay');
 
 var store = memFs.create();
 var fs = editor.create(store);
@@ -26,14 +27,13 @@ module.exports = yeoman.generators.Base.extend({
       desc: 'The service name'
     });
 
-    this.log('You called the ' +  chalk.cyan('leptir') + ' service generator with the argument ' + this.serviceName + '.');
+    this.log(yosay('You called the ' +  chalk.cyan('leptir') + ' service generator with the argument ' + this.serviceName + '.'));
   },
 
   getModule: function() {
     var done = this.async();
 
     var uModules = uniqueModules.getUniqueModules();
-    this.log('uModules: ' + uModules);
 
     var prompts = [
     {

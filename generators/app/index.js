@@ -5,6 +5,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var memFs = require('mem-fs');
 var editor = require('mem-fs-editor');
+var yosay = require('yosay');
 
 var store = memFs.create();
 var fs = editor.create(store);
@@ -16,9 +17,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
   prompting: function(){
     var done = this.async();
 
-    this.log(
-      'Welcome to the sensational ' + chalk.cyan('leptir') + ' generator!'
-    );
+    this.log(yosay('Hello, and welcome to my fantastic ' + chalk.cyan('leptir') + ' generator!'));
 
     var prompts = [
       {
