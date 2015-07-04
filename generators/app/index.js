@@ -53,7 +53,8 @@ var LeptirGenerator = yeoman.generators.Base.extend({
       this.props = props;
       this.appName = this.props.appName;
 
-      if(this.appName == 'leptir'){
+      if(this.appName == 'leptir' || this.appName == 'leptir-seed'){
+        this.appName = 'leptir-seed';
         this.devName = 'Damir Kusar';
         this.devEmail = 'damir@kusar.ch';
         this.devGitHubUrl = 'https://github.com/damirkusar';
