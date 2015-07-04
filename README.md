@@ -216,7 +216,7 @@ This will find the latest versions that match the version ranges specified in th
 
 ## Sub-Generators
 
-As soon you have created your application, you can create modules, styles, services, controllers and directives with leptirs Sub-Generators.
+As soon you have created your application, you can create modules, styles, services, controllers, directives and views with leptirs Sub-Generators.
 
 For all Sub-Generators you will have to provide a name, how you want to call the module or service.
 You can do that by a single word or if you have more words, add between ""
@@ -289,6 +289,20 @@ or
 
 ```bash
 yo leptir:style "new Style"
+```
+
+
+
+### Create View
+
+```bash
+yo leptir:view newView
+```
+
+or
+
+```bash
+yo leptir:view "new View"
 ```
 
 
