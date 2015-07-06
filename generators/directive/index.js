@@ -54,17 +54,27 @@ module.exports = yeoman.generators.Base.extend({
   createDirectiveInModule: function(){
     this.convertedDirectiveNameClass = s(this.directiveName).humanize().classify().value();
     this.convertedDirectiveName = s(this.convertedDirectiveNameClass).decapitalize().value();
+    this.slugifiedDirectiveName = s(this.directiveName).humanize().slugify().value();
 
     this.fullName = this.convertedDirectiveName+'.directive';
 
     this.templateContext = {
-      directiveName: this.convertedDirectiveNameClass,
-      moduleName: this.moduleName
+      directiveName: this.convertedDirectiveName,
+      moduleName: this.moduleName,
+      slugifiedDirectiveName: this.slugifiedDirectiveName
     };
 
     this.fs.copyTpl(
       this.templatePath('directive.js'),
       this.destinationPath('public/modules/'+this.moduleName+'/js/directives/'+this.fullName+'.js'),
+      this.templateContext
+    );
+  },
+
+  createDirectiveTestInTest: function(){
+    this.fs.copyTpl(
+      this.templatePath('directive.test.js'),
+      this.destinationPath('public/tests/'+this.moduleName+'/directives/'+this.fullName+'.test.js'),
       this.templateContext
     );
   },

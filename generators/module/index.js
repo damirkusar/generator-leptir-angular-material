@@ -32,10 +32,13 @@ module.exports = yeoman.generators.Base.extend({
 
     this.convertedModuleNameClass = s(this.moduleName).humanize().classify().value();
     this.convertedModuleName = s(this.convertedModuleNameClass).decapitalize().value();
+    this.slugifiedDirectiveName = s(this.moduleName).humanize().slugify().value();
 
     this.templateContext = {
       moduleNameClass: this.convertedModuleNameClass,
-      moduleName: this.convertedModuleName
+      moduleName: this.convertedModuleName,
+      directiveName: this.convertedModuleName,
+      slugifiedDirectiveName: this.slugifiedDirectiveName
     };
 
     done();
@@ -141,6 +144,12 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(
         this.templatePath('test/services/demo.service.test.js'),
         this.destinationPath('public/tests/'+this.convertedModuleName+'/services/'+this.convertedModuleName+'.service.test.js'),
+        this.templateContext
+      );
+
+      this.fs.copyTpl(
+        this.templatePath('test/directives/demo.directive.test.js'),
+        this.destinationPath('public/tests/'+this.convertedModuleName+'/directives/'+this.convertedModuleName+'.directive.test.js'),
         this.templateContext
       );
 
