@@ -148,7 +148,7 @@ var LeptirGenerator = yeoman.generators.Base.extend({
   generateDemoModule: function() {
       if (this.addDemoModule) {
           var done = this.async();
-          this.invoke("leptir:module", {args: ["Demo"]}, function(){
+          this.invoke("leptir-angular-material:module", {args: ["Demo"]}, function(){
               done();
           });
       }
