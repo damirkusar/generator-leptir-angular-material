@@ -38,7 +38,7 @@ To get started, just install the leptir generator, run it & install the dependen
 ### Install leptir Generator
 
 ```bash
-npm install -g generator-leptir
+npm install -g generator-leptir-angular-bootstrap
 ```
 
 
@@ -55,7 +55,7 @@ cd myNewLeptirProject
 then run the generator and follow the questions.
 
 ```bash
-yo leptir
+yo leptir-angular-bootstrap
 ```
 
 
@@ -226,13 +226,13 @@ You can do that by a single word or if you have more words, add between ""
 ### Create Module
 
 ```bash
-yo leptir:module newModule
+yo leptir-angular-bootstrap:module newModule
 ```
 
 or
 
 ```bash
-yo leptir:module "new Module"
+yo leptir-angular-bootstrap:module "new Module"
 ```
 
 
@@ -240,13 +240,13 @@ yo leptir:module "new Module"
 ### Create Service
 
 ```bash
-yo leptir:service newService
+yo leptir-angular-bootstrap:service newService
 ```
 
 or
 
 ```bash
-yo leptir:service "new Service"
+yo leptir-angular-bootstrap:service "new Service"
 ```
 
 
@@ -254,13 +254,13 @@ yo leptir:service "new Service"
 ### Create Controller
 
 ```bash
-yo leptir:controller newController
+yo leptir-angular-bootstrap:controller newController
 ```
 
 or
 
 ```bash
-yo leptir:controller "new Controller"
+yo leptir-angular-bootstrap:controller "new Controller"
 ```
 
 
@@ -268,13 +268,13 @@ yo leptir:controller "new Controller"
 ### Create Directive
 
 ```bash
-yo leptir:directive newDirective
+yo leptir-angular-bootstrap:directive newDirective
 ```
 
 or
 
 ```bash
-yo leptir:directive "new Directive"
+yo leptir-angular-bootstrap:directive "new Directive"
 ```
 
 
@@ -282,13 +282,13 @@ yo leptir:directive "new Directive"
 ### Create Style
 
 ```bash
-yo leptir:style newStyle
+yo leptir-angular-bootstrap:style newStyle
 ```
 
 or
 
 ```bash
-yo leptir:style "new Style"
+yo leptir-angular-bootstrap:style "new Style"
 ```
 
 
@@ -296,13 +296,13 @@ yo leptir:style "new Style"
 ### Create View
 
 ```bash
-yo leptir:view newView
+yo leptir-angular-bootstrap:view newView
 ```
 
 or
 
 ```bash
-yo leptir:view "new View"
+yo leptir-angular-bootstrap:view "new View"
 ```
 
 
