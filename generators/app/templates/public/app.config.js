@@ -4,7 +4,7 @@
 var ApplicationConfiguration = (function () {
     // Init module configuration options
     var applicationModuleName = 'App';
-    var applicationModuleVendorDependencies = ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'pascalprecht.translate'];
+    var applicationModuleVendorDependencies = ['ngMaterial', 'ui.utils', 'ui.router', 'ngAnimate', 'pascalprecht.translate'];
 
     // Add a new vertical module
     var registerModule = function (moduleName, dependencies) {
@@ -22,4 +22,10 @@ var ApplicationConfiguration = (function () {
     };
 })();
 
-angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies);
+angular.module(ApplicationConfiguration.applicationModuleName, ApplicationConfiguration.applicationModuleVendorDependencies)
+.config(function($mdThemingProvider) {
+  $mdThemingProvider.theme('default')
+    .primaryPalette('indigo')
+    .accentPalette('brown').dark()
+    .warnPalette('red');
+});

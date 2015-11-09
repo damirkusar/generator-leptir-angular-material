@@ -1,12 +1,12 @@
 {
-  "name": "generator-leptir-angular-bootstrap",
-  "version": "2.0.0",
-  "description": "Yeoman generator for AngularJS with gulp, browserify, bootstrap, SCSS, angular-ui, angular-translate, karma, jasmine and ftp deployment",
+  "name": "generator-leptir-angular-material",
+  "version": "1.0.0",
+  "description": "Yeoman generator for AngularJS with gulp, browserify, Angular-Material, SCSS, angular-ui, angular-translate, karma, jasmine and ftp deployment",
   "license": "MIT",
   "main": "app/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/damirkusar/generator-leptir-angular-bootstrap"
+    "url": "https://github.com/damirkusar/generator-leptir-angular-material"
   },
   "author": {
     "name": "Damir Kusar",
@@ -27,7 +27,8 @@
     "angular-ui",
     "gulp",
     "browserify",
-    "bootstrap",
+    "material",
+    "Angular-Material",
     "karma",
     "jasmine",
     "ftp deploy",

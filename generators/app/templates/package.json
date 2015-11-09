@@ -14,7 +14,9 @@
   "dependencies": {
     "angular": "^1.4.5",
     "angular-animate": "^1.4.5",
+    "angular-aria": "^1.4.7",
     "angular-cookies": "^1.4.5",
+    "angular-material": "^0.11.4",
     "angular-resource": "^1.4.5"
   },
   "devDependencies": {
@@ -60,11 +62,8 @@
   },
   "browser": {
     "jquery": "./public/bower_components/jquery/jquery.min.js",
-    "bootstrap": "./public/bower_components/bootstrap/dist/js/bootstrap.min.js",
     "moment": "./public/bower_components/moment/min/moment.min.js",
     "underscore": "./public/bower_components/underscore/underscore-min.js",
-    "angular-bootstrap": "./public/bower_components/angular-bootstrap/ui-bootstrap.min.js",
-    "angular-bootstrap-tpls": "./public/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js",
     "angular-ui-router": "./public/bower_components/angular-ui-router/release/angular-ui-router.min.js",
     "angular-ui-utils": "./public/bower_components/angular-ui-utils/ui-utils.min.js",
     "angular-translate": "./public/bower_components/angular-translate/angular-translate.min.js",
@@ -75,26 +74,11 @@
     "jquery": {
       "exports": "$"
     },
-    "bootstrap": {
-      "exports": "bootstrap"
-    },
     "moment": {
       "exports": "moment"
     },
     "underscore": {
       "exports": "underscore"
-    },
-    "angular-bootstrap": {
-      "depends": [
-        "angular"
-      ],
-      "exports": "null"
-    },
-    "angular-bootstrap-tpls": {
-      "depends": [
-        "angular"
-      ],
-      "exports": "null"
     },
     "angular-ui-router": {
       "depends": [

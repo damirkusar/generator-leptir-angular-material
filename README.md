@@ -2,12 +2,12 @@
 
 Leptir means in croatian language Butterfly.
 
-`AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Bootstrap, SCSS, Karma & Jasmine & ftp deployment out of the box.`
+`AngularJS, Gulp, Browserify, Angular-UI, Angular-Translate, Angular-Material, SCSS, Karma & Jasmine & ftp deployment out of the box.`
 
 I create often websites for different purposes or just to test something, I run always into the same problems, either I have to develop everything from scratch or the seeds & generators available are not serving my needs how I want to have a project structured and how I want to use it. So I thought, why not create a seed & a yeoman-generator which serves my needs and points to a direction to be used for professional AngularJS applications and can also be used by others.
 I hope it will serve your needs too.
 
-The seed and yeoman-generator are structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Bootstrap for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment.
+The seed and yeoman-generator are structured in independent modules to keep it maintainable & clear, has Gulp as the build system, Browserify for the dependencies, NodeJs for the node packages, Angular-UI for routing, Angular-Translate for internationalization support, Angular-Material for faster UI dev, SCSS for better CSS handling, Karma + Jasmine for the unit tests and ftp deployment.
 This seed is fully featured and easy to use for your next professional web application.
 
 Each module has examples of angular services, directives, controllers and config such as routes & menu including unit tests.
@@ -38,7 +38,7 @@ To get started, just install the leptir generator, run it & install the dependen
 ### Install leptir Generator
 
 ```bash
-npm install -g generator-leptir-angular-bootstrap
+npm install -g generator-leptir-angular-material
 ```
 
 
@@ -55,7 +55,7 @@ cd myNewLeptirProject
 then run the generator and follow the questions.
 
 ```bash
-yo leptir-angular-bootstrap
+yo leptir-angular-material
 ```
 
 
@@ -226,13 +226,13 @@ You can do that by a single word or if you have more words, add between ""
 ### Create Module
 
 ```bash
-yo leptir-angular-bootstrap:module newModule
+yo leptir-angular-material:module newModule
 ```
 
 or
 
 ```bash
-yo leptir-angular-bootstrap:module "new Module"
+yo leptir-angular-material:module "new Module"
 ```
 
 
@@ -240,13 +240,13 @@ yo leptir-angular-bootstrap:module "new Module"
 ### Create Service
 
 ```bash
-yo leptir-angular-bootstrap:service newService
+yo leptir-angular-material:service newService
 ```
 
 or
 
 ```bash
-yo leptir-angular-bootstrap:service "new Service"
+yo leptir-angular-material:service "new Service"
 ```
 
 
@@ -254,13 +254,13 @@ yo leptir-angular-bootstrap:service "new Service"
 ### Create Controller
 
 ```bash
-yo leptir-angular-bootstrap:controller newController
+yo leptir-angular-material:controller newController
 ```
 
 or
 
 ```bash
-yo leptir-angular-bootstrap:controller "new Controller"
+yo leptir-angular-material:controller "new Controller"
 ```
 
 
@@ -268,13 +268,13 @@ yo leptir-angular-bootstrap:controller "new Controller"
 ### Create Directive
 
 ```bash
-yo leptir-angular-bootstrap:directive newDirective
+yo leptir-angular-material:directive newDirective
 ```
 
 or
 
 ```bash
-yo leptir-angular-bootstrap:directive "new Directive"
+yo leptir-angular-material:directive "new Directive"
 ```
 
 
@@ -282,13 +282,13 @@ yo leptir-angular-bootstrap:directive "new Directive"
 ### Create Style
 
 ```bash
-yo leptir-angular-bootstrap:style newStyle
+yo leptir-angular-material:style newStyle
 ```
 
 or
 
 ```bash
-yo leptir-angular-bootstrap:style "new Style"
+yo leptir-angular-material:style "new Style"
 ```
 
 
@@ -296,13 +296,13 @@ yo leptir-angular-bootstrap:style "new Style"
 ### Create View
 
 ```bash
-yo leptir-angular-bootstrap:view newView
+yo leptir-angular-material:view newView
 ```
 
 or
 
 ```bash
-yo leptir-angular-bootstrap:view "new View"
+yo leptir-angular-material:view "new View"
 ```
 
 

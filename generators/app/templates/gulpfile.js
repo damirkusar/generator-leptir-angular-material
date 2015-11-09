@@ -36,9 +36,11 @@ var paths = {
     img: ['./public/modules/**/img/*'],
     resources: ['./public/modules/**/resources/*'],
     bower: ['./public/bower_components/**/*', './public/bower_components/**/*.css', './public/bower_components/bootstrap/**/*.min.css'],
+    node: ['./node_modules/angular-material/angular-material.min.css'],
     destination_public: './dist/',
     destination_modules: './dist/modules/',
-    destination_bower: ['./dist/bower_components/', './dist/bower_components/bootstrap/']
+    destination_bower: ['./dist/bower_components/', './dist/bower_components/bootstrap/'],
+    destination_node: ['./dist/node_modules/angular-material/']
 };
 
 // Clean task
@@ -130,6 +132,11 @@ gulp.task('bower-bootstrap', function () {
     gulp.src(paths.bower[2]).pipe(gulp.dest(paths.destination_bower[1]));
 });
 
+// node_modules angular material task
+gulp.task('node-modules-material', function () {
+    gulp.src(paths.node[0]).pipe(gulp.dest(paths.destination_node[0]));
+});
+
 gulp.task('watch', ['lint'], function () {
     // Start webserver
     server.listen(serverPort);
@@ -169,7 +176,8 @@ gulp.task('build', function () {
         'clean',
         ['views', 'styles', 'img', 'resources', 'lint', 'javascript'],
         'browserify',
-        'bower-css'
+        'bower-css',
+        'node-modules-material'
     );
 });
 
