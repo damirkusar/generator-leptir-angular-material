@@ -20,9 +20,5 @@ angular.module('<%= moduleName %>').run(['Menus',
         // position: Position for ordering dropDown menu
 
         Menus.addMenuItem('topBar', '<%= moduleName %>1Id', '<%= moduleNameClass %>', '<%= moduleName %>', '', '0');
-
-        Menus.addMenuItem('topBar', '<%= moduleName %>2Id', '<%= moduleNameClass %> DropDown', '', 'dropDown', '1');
-        Menus.addSubMenuItem('topBar', '<%= moduleName %>2Id','sub1Id' ,'Go Home', 'home', '0');
-        Menus.addSubMenuItem('topBar', '<%= moduleName %>2Id', 'sub2Id', 'To <%= moduleNameClass %>', '<%= moduleName %>', '1');
     }
 ]);
