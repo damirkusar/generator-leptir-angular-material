@@ -131,7 +131,7 @@ Now, your app can be accessed through the internet as well.
 ### Deploy the Application
 
 You can also automate the deployment to a server via ftp. No need to copy the files manually to a server.
-For that, please change the settings deplos task settings in the gulpfile.js.
+For that, please change the `deploy` task settings in the gulpfile.js.
 
 Mandatory settings to change:
 - host
