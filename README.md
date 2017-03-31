@@ -1,4 +1,6 @@
-# Leptir - the yeoman-generator for professional AngularJS apps
+# DEPRECATED - NOT UNDER DEVELOPMENT ANYMORE
+
+## Leptir - the yeoman-generator for professional AngularJS apps
 
 Leptir means in croatian language Butterfly.
 
