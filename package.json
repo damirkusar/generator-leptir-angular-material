@@ -1,6 +1,6 @@
 {
   "name": "generator-leptir-angular-material",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "Yeoman generator for AngularJS with gulp, browserify, Angular-Material, SCSS, angular-ui, angular-translate, karma, jasmine and ftp deployment",
   "license": "MIT",
   "main": "app/index.js",
